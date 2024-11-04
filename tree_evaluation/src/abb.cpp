@@ -48,6 +48,7 @@ void ABB::insert(int val){
 
 ABBNode* ABB::find_rec(int val, ABBNode* node){
 	ABBNode* ans = nullptr;
+	if (node==nullptr) return ans;
 
 	if (node->getData() == val){
 		ans = node;

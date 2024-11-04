@@ -9,7 +9,7 @@
 #include <iostream>
 
 
-namespace trees {
+namespace AVLtrees {
 
 AVL::AVL():root(nullptr) {
 	// TODO Auto-generated constructor stub
@@ -17,7 +17,7 @@ AVL::AVL():root(nullptr) {
 
 void AVL::balance(AVLNode* node){
 	RotationType rType = getRotationType(node);
-	std::cout << "Rotation Type : "  << rType << std::endl;
+	//std::cout << "Rotation Type : "  << rType << std::endl;
 	if (rType == RotationType::LeftRotation){
 		leftRotation(node);
 	}
@@ -62,7 +62,7 @@ RotationType AVL::getRotationType(AVLNode* node){
 }
 
 void AVL::leftRotation(AVLNode* node){
-	std::cout<<"****left-rotation "<<node->getData()<<std::endl;
+	//std::cout<<"****left-rotation "<<node->getData()<<std::endl;
 	AVLNode* rightChild = node->getRight();
 	AVLNode* parent = node->getParent();
 	bool isLeft = node->isLeft();
@@ -85,14 +85,14 @@ void AVL::leftRotation(AVLNode* node){
 }
 
 void AVL::leftRightRotation(AVLNode* node){
-	std::cout<<"left-right rotation"<<std::endl;
+	//std::cout<<"left-right rotation"<<std::endl;
 	leftRotation(node->getLeft());
 	rightRotation(node);
 }
 
 void AVL::rightRotation(AVLNode* node){
 
-	std::cout<<"***right rotation "<<node->getData()<<std::endl;
+	//std::cout<<"***right rotation "<<node->getData()<<std::endl;
 	AVLNode* leftChild = node->getLeft();
 	AVLNode* parent = node->getParent();
 	bool isLeft = node->isLeft();
@@ -116,7 +116,7 @@ void AVL::rightRotation(AVLNode* node){
 }
 
 void AVL::rightLeftRotation(AVLNode* node){
-	std::cout<<"right-left rotation"<<std::endl;
+	//std::cout<<"right-left rotation"<<std::endl;
 	rightRotation(node->getRight());
 	leftRotation(node);
 }
@@ -160,6 +160,7 @@ void AVL::insert(int val){
 
 AVLNode* AVL::find_rec(int val, AVLNode* node){
 	AVLNode* ans = nullptr;
+	if (node==nullptr) return ans;
 	if (node->getData() == val){
 		ans = node;
 	}

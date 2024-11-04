@@ -5,12 +5,12 @@
  *      Author: jsaavedr
  */
 
-#ifndef ABB_HPP_
-#define ABB_HPP_
+#ifndef AVL_HPP_
+#define AVL_HPP_
 
 #include "trees/avlNode.hpp"
 
-namespace trees {
+namespace AVLtrees {
 
 enum RotationType{
 	LeftRotation = 10,
@@ -42,4 +42,4 @@ public:
 
 } /* namespace trees */
 
-#endif /* ABB_HPP_ */
+#endif /* AVL_HPP_ */

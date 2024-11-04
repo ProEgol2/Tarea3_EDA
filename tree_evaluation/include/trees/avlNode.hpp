@@ -5,10 +5,10 @@
  *      Author: jsaavedr
  */
 
-#ifndef ABBNODE_HPP_
-#define ABBNODE_HPP_
+#ifndef AVLNODE_HPP_
+#define AVLNODE_HPP_
 
-namespace trees {
+namespace AVLtrees {
 
 enum NodeType{
 	LEFT = 10,
@@ -54,4 +54,4 @@ public:
 
 } /* namespace trees */
 
-#endif /* ABBNODE_H_ */
+#endif /* AVLNODE_H_ */

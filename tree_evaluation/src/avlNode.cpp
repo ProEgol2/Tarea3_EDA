@@ -9,7 +9,7 @@
 #include <cmath>
 #include <iostream>
 
-namespace trees {
+namespace AVLtrees {
 
 AVLNode::AVLNode():
 		data(-1), ptrLeft(nullptr), ptrRight(nullptr),

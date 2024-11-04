@@ -23,23 +23,23 @@ void RB::balance(RBNode* node){
 		rType = getRotationType(node);
 		
 		if(rType == RotationType::case_1){
-			std::cout<<"Realiza caso 1"<<std::endl;
+			//std::cout<<"Realiza caso 1"<<std::endl;
 			do_case_1(node);
 		}
 		else if(rType == RotationType::case_2){
-			std::cout<<"Realiza caso 2"<<std::endl;
+			//std::cout<<"Realiza caso 2"<<std::endl;
 			do_case_2(node);
 		}
 		else if(rType == RotationType::case_3){
-			std::cout<<"Realiza caso 3"<<std::endl;
+			//std::cout<<"Realiza caso 3"<<std::endl;
 			do_case_3(node);
 		}
 		else if(rType == RotationType::case_4){
-			std::cout<<"Realiza caso 4"<<std::endl;
+			//std::cout<<"Realiza caso 4"<<std::endl;
 			do_case_4(node);
 		}
 		else{
-			std::cout<<"Realiza caso 5"<<std::endl;
+			//std::cout<<"Realiza caso 5"<<std::endl;
 			do_case_5(node);
 		}
 	}
@@ -214,27 +214,26 @@ void RB::insert(int val){
 	}
 }
 
-RBNode* RB::find(int val, RBNode* node){
-	RBNode* ans = nullptr;
-	if (node->getData() == val){
-		ans = node;
-	}
-	else{
-		if (val < node->getData()){
-			find(val, node->getLeft());
-		}
-		else{
-			find(val, node->getRight());
-		}
-	}
-	return ans;
+RBNode* RB::find(int val, RBNode* node) {
+    if (node == nullptr) {
+        return nullptr;
+    }
+    
+    if (node->getData() == val) {
+        return node;
+    }
+
+    if (val < node->getData()) {
+        return find(val, node->getLeft());
+    } else {
+        return find(val, node->getRight());
+    }
 }
 
-RBNode* RB::find(int val){
-	RBNode* ans = nullptr;
-	ans = find(val, root);
-	return ans;
+RBNode* RB::find(int val) {
+    return find(val, root);
 }
+
 
 void RB::traverse(RBNode* node, int label){
 	if (node != nullptr){
