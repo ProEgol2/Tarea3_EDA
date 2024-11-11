@@ -161,7 +161,7 @@ void AVL::insert(int val){
 AVLNode* AVL::find_rec(int val, AVLNode* node){
 	AVLNode* ans = nullptr;
 	if (node==nullptr) return ans;
-	if (node->getData() == val){
+	else if (node->getData() == val){
 		ans = node;
 	}
 	else{
